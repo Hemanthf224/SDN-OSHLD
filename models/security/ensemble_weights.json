@@ -1,7 +1,0 @@
-{
-    "LogisticRegression": 0.19266774007141177,
-    "RandomForest": 0.20449970916063887,
-    "GradientBoosting": 0.2043409942526318,
-    "ExtraTrees": 0.20031453847314382,
-    "MLP": 0.1981770180421738
-}

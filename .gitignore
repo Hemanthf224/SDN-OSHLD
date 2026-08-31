@@ -1,33 +1,31 @@
-# Byte-compiled / optimized / DLL files
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
-
-# Virtual Environments
+.venv/
 venv/
 env/
-ENV/
-env.bak/
-venv.bak/
 
 # Datasets
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-data/synthetic/*
-!data/synthetic/.gitkeep
+data/
+datasets/
 
 # Models
-models/qos/*.joblib
-models/security/*.joblib
-models/drift/*.joblib
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.joblib
 
-# Logs and databases
+# Logs and OS
 *.log
-*.sqlite
-*.sqlite3
-
-# OS generated files
 .DS_Store
 Thumbs.db
+*.sqlite
+*.sqlite3
