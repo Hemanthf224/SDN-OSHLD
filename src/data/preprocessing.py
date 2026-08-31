@@ -77,7 +77,7 @@ class DataPreprocessor:
     def save_preprocessor(self, path):
         """Save the fitted scaler and label encoder"""
         os.makedirs(os.path.dirname(path), exist_ok=True)
-        joblib.save({'scaler': self.scaler, 'label_encoder': self.label_encoder}, path)
+        joblib.dump({'scaler': self.scaler, 'label_encoder': self.label_encoder}, path)
         
     def load_preprocessor(self, path):
         """Load fitted parameters"""
