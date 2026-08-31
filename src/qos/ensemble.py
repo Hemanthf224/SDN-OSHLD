@@ -6,6 +6,20 @@ from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 import json
 import torch
 
+class PyTorchWrapper:
+    def __init__(self, model, device, input_dim, output_dim):
+        self.model = model
+        self.device = device
+        self.input_dim = input_dim
+        self.output_dim = output_dim
+        
+    def predict(self, X):
+        self.model.eval()
+        with torch.no_grad():
+            X_t = torch.tensor(X, dtype=torch.float32).to(self.device)
+            preds = self.model(X_t).cpu().numpy()
+        return preds
+
 class QoSEnsemble:
     def __init__(self, data_dir='data/processed', model_dir='models/qos'):
         self.data_dir = data_dir

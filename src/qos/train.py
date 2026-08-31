@@ -13,6 +13,20 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 
+class PyTorchWrapper:
+    def __init__(self, model, device, input_dim, output_dim):
+        self.model = model
+        self.device = device
+        self.input_dim = input_dim
+        self.output_dim = output_dim
+        
+    def predict(self, X):
+        self.model.eval()
+        with torch.no_grad():
+            X_t = torch.tensor(X, dtype=torch.float32).to(self.device)
+            preds = self.model(X_t).cpu().numpy()
+        return preds
+
 class QoSModelTrainer:
     def __init__(self, data_dir='data/processed', model_dir='models/qos'):
         self.data_dir = data_dir
@@ -110,21 +124,7 @@ class QoSModelTrainer:
         print(f"MLP trained in {time.time()-start:.2f}s")
         torch.save(model.state_dict(), os.path.join(self.model_dir, 'mlp.pt'))
         
-        # We need a wrapper to behave like scikit-learn for our ensemble
-        class PyTorchWrapper:
-            def __init__(self, model, device, input_dim, output_dim):
-                self.model = model
-                self.device = device
-                self.input_dim = input_dim
-                self.output_dim = output_dim
-                
-            def predict(self, X):
-                self.model.eval()
-                with torch.no_grad():
-                    X_t = torch.tensor(X, dtype=torch.float32).to(self.device)
-                    preds = self.model(X_t).cpu().numpy()
-                return preds
-                
+
         wrapped_model = PyTorchWrapper(model, self.device, input_dim, output_dim)
         joblib.dump(wrapped_model, os.path.join(self.model_dir, 'mlp_wrapper.joblib'))
 

@@ -1,0 +1,72 @@
+{
+    "latency": {
+        "Ridge": 0.0667041558812735,
+        "RandomForest": 0.24256316170228132,
+        "GradientBoosting": 0.24184037040666664,
+        "ExtraTrees": 0.23113073704214163,
+        "MLP": 0.21776157496763696
+    },
+    "jitter": {
+        "Ridge": 0.06307239828658619,
+        "RandomForest": 0.24262195600654318,
+        "GradientBoosting": 0.24108175146984911,
+        "ExtraTrees": 0.23356084806314636,
+        "MLP": 0.21966304617387516
+    },
+    "packet_loss": {
+        "Ridge": 0.08115837755536322,
+        "RandomForest": 0.3113413473328632,
+        "GradientBoosting": 0.3108088603545414,
+        "ExtraTrees": 0.29651051492757385,
+        "MLP": 0.00018089982965825146
+    },
+    "throughput": {
+        "Ridge": 0.29076879999091726,
+        "RandomForest": 0.15563388563627428,
+        "GradientBoosting": 0.09552372909546387,
+        "ExtraTrees": 0.16816831959549305,
+        "MLP": 0.2899052656818516
+    },
+    "energy_efficiency": {
+        "Ridge": 0.3247233077221342,
+        "RandomForest": 0.10487033098707702,
+        "GradientBoosting": 0.08621932518473549,
+        "ExtraTrees": 0.14481004427236524,
+        "MLP": 0.3393769918336881
+    },
+    "qos_score": {
+        "Ridge": 0.056978517043368516,
+        "RandomForest": 0.24490987844530945,
+        "GradientBoosting": 0.24385404387397894,
+        "ExtraTrees": 0.23349447898573367,
+        "MLP": 0.22076308165160943
+    },
+    "flow_completion": {
+        "Ridge": 0.20689270014692568,
+        "RandomForest": 0.19936525517548037,
+        "GradientBoosting": 0.20009526263487937,
+        "ExtraTrees": 0.18784991990509145,
+        "MLP": 0.2057968621376231
+    },
+    "p95_latency": {
+        "Ridge": 0.06668964614088148,
+        "RandomForest": 0.24246422944585497,
+        "GradientBoosting": 0.24178776747929523,
+        "ExtraTrees": 0.23108046059389248,
+        "MLP": 0.21797789634007594
+    },
+    "p99_latency": {
+        "Ridge": 0.06669082353627838,
+        "RandomForest": 0.24251467992911147,
+        "GradientBoosting": 0.2417920330998016,
+        "ExtraTrees": 0.2310845402994573,
+        "MLP": 0.21791792313535124
+    },
+    "total_energy": {
+        "Ridge": 0.20139524833385283,
+        "RandomForest": 0.2002563757930847,
+        "GradientBoosting": 0.20035000416824478,
+        "ExtraTrees": 0.1968906478221967,
+        "MLP": 0.20110772388262096
+    }
+}
