@@ -50,7 +50,8 @@ class InferenceService:
         sec_pred_class, sec_probs = self.security_ensemble.predict_ensemble(X_scaled)
         sec_class_idx = sec_pred_class[0]
         sec_prob = np.max(sec_probs[0])
-        class_name = self.label_encoder.inverse_transform([sec_class_idx])[0]
+        class_names = ['Botnet', 'BruteForce', 'DDoS', 'DoS', 'Normal', 'PortScan']
+        class_name = class_names[int(sec_class_idx)]
         
         # 4. Decision Engine
         decision = self.policy_engine.evaluate_flow(
