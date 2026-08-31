@@ -1,0 +1,27 @@
+# Core Data & ML
+numpy
+pandas
+scikit-learn
+scipy
+joblib
+
+# GPU Acceleration
+xgboost
+lightgbm
+torch --index-url https://download.pytorch.org/whl/cu121
+
+# Web & API
+fastapi
+uvicorn
+pydantic
+Flask
+
+# Plotting & Dashboard
+matplotlib
+seaborn
+
+# Utilities & Testing
+pytest
+requests
+tqdm
+python-dotenv
